@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Github, ExternalLink, Cpu, Wifi, Heart, Cloud, Brain, Shield } from "lucide-react"
-import Image from "next/image"
 
 const projectCategories = ["All", "IoT", "Healthcare", "AI/ML", "Hardware", "Security"]
 
@@ -21,7 +20,7 @@ const projects = [
     demo: "https://demo.com",
     status: "Production",
     impact: "Deployed in 5 hospitals, 99.7% uptime",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600",
     featured: true,
     metrics: {
       users: "500+",
@@ -42,7 +41,7 @@ const projects = [
     demo: "https://demo.com",
     status: "Beta",
     impact: "1000+ active users, 4.8★ rating",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=600",
     featured: true,
     metrics: {
       users: "1000+",
@@ -63,7 +62,7 @@ const projects = [
     demo: "https://demo.com",
     status: "Prototype",
     impact: "Patent filed, CES 2024 showcase",
-    image: "https://images.unsplash.com/photo-1506629905607-d405b7a30db9?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=600",
     featured: true,
     metrics: {
       sensors: "64",
@@ -84,7 +83,7 @@ const projects = [
     demo: "https://demo.com",
     status: "Completed",
     impact: "96% prediction accuracy, 50+ installations",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
     metrics: {
       accuracy: "96%",
       range: "10km",
@@ -104,7 +103,7 @@ const projects = [
     demo: "https://demo.com",
     status: "Research",
     impact: "5x faster inference, 70% power reduction",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600",
     metrics: {
       speed: "5x faster",
       power: "-70%",
@@ -123,7 +122,7 @@ const projects = [
     demo: "https://demo.com",
     status: "Completed",
     impact: "Zero security breaches, 40% energy savings",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600",
     metrics: {
       devices: "50+",
       uptime: "99.9%",
@@ -214,11 +213,10 @@ export default function Projects() {
 
                   {/* Project Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
+                    <img
+                      src={project.image}
                       alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
@@ -331,11 +329,10 @@ export default function Projects() {
                 <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700 hover:border-purple-500 transition-all duration-300 h-full overflow-hidden rounded-xl">
                   {/* Project Image */}
                   <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
+                    <img
+                      src={project.image}
                       alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
@@ -426,11 +423,10 @@ export default function Projects() {
             >
               {/* Header Image */}
               <div className="relative h-80 w-full">
-                <Image
-                  src={selectedProject.image || "/placeholder.svg"}
+                <img
+                  src={selectedProject.image}
                   alt={selectedProject.title}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
 
